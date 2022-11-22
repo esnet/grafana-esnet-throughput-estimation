@@ -1,0 +1,40 @@
+{
+  "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
+  "type": "panel",
+  "name": "grafana-esnet-throughput-estimation",
+  "id": "e-snet-grafana-esnet-throughput-estimation",
+  "info": {
+    "description": "A Grafana Panel to estimate throughput for a network or network segment",
+    "author": {
+      "name": "James Kafader",
+      "url": "https://es.net"
+    },
+    "keywords": [
+      "network",
+      "throughput",
+      "prediction",
+      "estimation"
+    ],
+    "logos": {
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
+    },
+    "links": [
+      {
+        "name": "Website",
+        "url": "https://github.com/grafana/grafana-starter-panel"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/grafana/grafana-starter-panel/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "1.0.0",
+    "updated": "2022-11-22"
+  },
+  "dependencies": {
+    "grafanaDependency": ">=7.0.0",
+    "plugins": []
+  }
+}
