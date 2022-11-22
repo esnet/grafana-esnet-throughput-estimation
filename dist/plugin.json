@@ -1,8 +1,8 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
-  "name": "grafana-esnet-throughput-estimation",
-  "id": "e-snet-grafana-esnet-throughput-estimation",
+  "name": "esnet-throughput-estimation",
+  "id": "esnet-throughput-estimation",
   "info": {
     "description": "A Grafana Panel to estimate throughput for a network or network segment",
     "author": {
