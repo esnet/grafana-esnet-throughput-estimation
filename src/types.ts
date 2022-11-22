@@ -1,7 +1,13 @@
-type SeriesSize = 'sm' | 'md' | 'lg';
-
 export interface SimpleOptions {
-  text: string;
-  showSeriesCount: boolean;
-  seriesCountSize: SeriesSize;
+  labelx: string;
+  labely: string;
+  scalex: string;
+  scaley: string;
+  defaultTimeValue: number;
+  defaultTimeInterval: string;
+  tickFormatX: string;
+  tickFormatY: string;
+  algorithm: number;
+  boundary: number;
+  boundaryUnits: number;
 }
