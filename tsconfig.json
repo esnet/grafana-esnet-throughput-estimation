@@ -4,6 +4,7 @@
   "compilerOptions": {
     "rootDir": "./src",
     "baseUrl": "./src",
+    "allowJs": true,
     "typeRoots": ["./node_modules/@types"]
   }
 }
