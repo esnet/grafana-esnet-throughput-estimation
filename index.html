@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Page</title>
+    <script type="module">
+        import "./src/lib/d3.min.js"; 
+        import { sampleData } from "./src/sampledata.js";
+        import { format_bit_size, format_byte_size, format_1024 } from "./src/lib/axisformats.js"
+        window["sampleData"] = sampleData;
+
+        import "./src/ThroughputEstimationGraph.js";
+        // create the WebComponent HTML element
+        var graph = document.createElement("throughput-estimation-graph");
+        // compare to the HTML attribute syntax above
+        graph.setAttribute("label-x", "Date");
+        graph.setAttribute("label-y", "Average Throughput");
+        graph.setAttribute("algorithm", "linear");
+        graph.setAttribute("format-x", "%b %Y");
+        graph.setAttribute("format-y", "d");
+        graph.setAttribute("boundary", 25 * 1024 ** 3); // link headroom: 100Gb
+        graph.setAttribute("width", 600);
+        graph.setAttribute("height", 400);
+        graph.setAttribute("time-interval", "months");
+        graph.setAttribute("time-value", "6");
+
+        // specify a custom function for formatting the Y axis ticks
+        graph.setRawGraphData(window['sampleData']);
+        graph.formatY = format_1024
+        document.querySelector("#script-target").appendChild(graph);
+    </script>
+</head>
+<body>
+    <style>
+        body { font-family: sans-serif; }
+    </style>
+    <p>Network Throughput Estimation Graph Demo</p>
+    <!-- example, rendering spurious, predictable, monotonically-increasing graph data -->
+    <throughput-estimation-graph
+        label-x="Year"
+        label-y="Growth"
+        algorithm="polynomial"
+        format-x="%Y"
+        format-y="d"
+        boundary="1500"
+        width="600"
+        height="400">
+    </throughput-estimation-graph>
+
+    <!-- example rendering real-world network data -->
+    <p>Real-world Graph Data</p>
+    <div id='script-target'></div>
+</body>
+</html>
